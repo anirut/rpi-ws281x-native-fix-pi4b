@@ -39,13 +39,13 @@ It will initialize the driver for 100 LEDs and set all LEDs to the
 same, pinkish color:
 
 ```javascript
-const ws281x = require('rpi-ws281x-native');
+const ws281x = require('rpi-ws281x-native-fix-pi4b);
 
 const channel = ws281x(100, { stripType: 'ws2812' });
 
 const colorArray = channel.array;
 for (let i = 0; i < channel.count; i++) {
-  colorsArray[i] = 0xffcc22;
+  colorArray[i] = 0xffcc22;
 }
 
 ws281x.render();
@@ -62,14 +62,14 @@ way for initialization using the top-level export function.
 #### Example:
 
 ```javascript
-const ws2821x = require('rpi-ws281x-native');
+const ws2821x = require('rpi-ws281x-native-fix-pi4b);
 const options = {
   dma: 10,
   freq: 800000,
   gpio: 18,
   invert: false,
   brightness: 255,
-  stripType: ws281x.stripType.WS2812
+  stripType: 'ws2812'
 };
 
 const channel = ws281x(20, options);
@@ -95,7 +95,7 @@ Configures and initializes the drivers and returns an array of channel-interface
 #### Example:
 
 ```javascript
-const ws2821x = require('rpi-ws281x-native');
+const ws2821x = require('rpi-ws281x-native-fix-pi4b);
 
 const channels = ws281x.init({
   dma: 10,
@@ -130,7 +130,7 @@ Send the current state of the channel color-buffers to the LEDs.
 #### Example:
 
 ```javascript
-const ws2821x = require('rpi-ws281x-native');
+const ws2821x = require('rpi-ws281x-native-fix-pi4b);
 
 // initialize
 const [channel] = ws281x.init(options);
